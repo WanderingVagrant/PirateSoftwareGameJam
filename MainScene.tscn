@@ -1,3 +1,31 @@
-[gd_scene format=3 uid="uid://cjil6arssqeug"]
+[gd_scene load_steps=5 format=3 uid="uid://cjil6arssqeug"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_4wr5e"]
+[ext_resource type="Texture2D" uid="uid://d4ogwt7rrc4r" path="res://Assets/Beetle bob.png" id="2_83y4g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vr4tw"]
+radius = 19.0
+height = 98.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b81jy"]
+distance = -140.659
+
+[node name="Level1" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4wr5e")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(15, -16)
+texture = ExtResource("2_83y4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_vr4tw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(2.275, 2.275)
+shape = SubResource("WorldBoundaryShape2D_b81jy")
