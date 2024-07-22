@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d4ogwt7rrc4r" path="res://Assets/Beetle bob.png" id="2_fhuks"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vr4tw"]
-radius = 19.0
-height = 98.0
+radius = 36.0
+height = 128.0
 
 [node name="Player" type="Node2D"]
 
@@ -18,3 +18,8 @@ texture = ExtResource("2_fhuks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_vr4tw")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(4.54, 4.54)
+position_smoothing_enabled = true
+position_smoothing_speed = 5.115
