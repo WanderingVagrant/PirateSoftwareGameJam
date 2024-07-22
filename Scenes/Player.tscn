@@ -10,6 +10,8 @@ height = 128.0
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_cmw4f")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -17,9 +19,10 @@ position = Vector2(15, -16)
 texture = ExtResource("2_fhuks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+light_mask = 3
+visibility_layer = 3
 shape = SubResource("CapsuleShape2D_vr4tw")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(4.54, 4.54)
-position_smoothing_enabled = true
-position_smoothing_speed = 5.115
+offset = Vector2(0, -43.725)
+zoom = Vector2(3.435, 3.435)
